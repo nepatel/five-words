@@ -5,7 +5,7 @@ const Journal = use("App/Models/Journal");
 class JournalController {
   async index({ view, auth }) {
     const reflections = await auth.user.journals().fetch();
-    console.log(await auth.user.journals().fetch())
+    // console.log(await auth.user.journals().fetch())
 
     return view.render("journal", { reflections: reflections.toJSON() });
   }
@@ -13,7 +13,7 @@ class JournalController {
   async store({ request, response, session, auth }) {
     const body = await request.all();
 
-    console.log(body)
+    // console.log(body)
 
     const reflection1 = await auth.user.journals().create({
       reflection: body.reflectionWho,
@@ -42,7 +42,7 @@ class JournalController {
 
     session.flash({ notification: "Today has been captured." });
 
-    return response.redirect("/journal");
+    return response.redirect("/reflection");
   }
 }
 
