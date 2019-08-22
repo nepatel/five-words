@@ -1,0 +1,32 @@
+@layout('layouts.Secondary')
+
+@section('title')
+Journal Entry
+@endsection
+
+@section('content')
+<div id="outerContainer">
+    {{--  <div id="logInTitle" class="title" >breathe. take a moment.</div>  --}}
+    <div id="logInTitle" class="title" >how was your day?</div> 
+    <div id="instructions">write down the five words that come to mind</div>
+<form action="{{ route('JournalController.store') }}" method="POST">
+    {{ csrfField() }}
+    <input type="text" name = "reflectionWho" autofocus>
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhat">
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhen">
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhere" >
+    <br>
+    <br>
+    <input type="text" name = "reflectionWhy">
+    <input class="submitButton" type="submit" value="submit today's five words">
+</form>
+{{--  <a href="/reflection"><button class="reflectionButton"> Reflection </button></a>  --}}
+</div>
+
+@endsection

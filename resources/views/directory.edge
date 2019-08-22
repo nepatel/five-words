@@ -1,0 +1,22 @@
+@layout('layouts.main')
+
+@section('title')
+FIVE WORDS
+{{--  showing up in the tab  --}}
+@endsection
+
+@section('content')
+
+<section>
+    <div class="title" href="/"> FIVE WORDS </div>
+    <div class="subtitle">
+      <p>your life. five words at a time.</p>
+    </div>
+    <div class="buttonrow">
+      <a href="/journal"><button class="journalButton"> record the day</button></a>
+      <a href="/reflection"><button class="reflectionButton"> reflect on the past</button></a>
+      {{--  these need to route to diff pages  --}}
+    </div>
+    </section>
+    
+    @endsection
